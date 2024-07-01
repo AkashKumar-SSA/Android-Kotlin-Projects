@@ -47,9 +47,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"This is parent :$view",Toast.LENGTH_SHORT).show()
             (view as TextView).setText("This is clicked")
 
-
         }
-
 
 //        val header:TextView = findViewById(R.id.header)
         binding.header.setOnClickListener {
