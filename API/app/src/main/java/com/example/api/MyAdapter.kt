@@ -25,13 +25,13 @@ class MyAdapter(private val context: Activity, private val productArrayList: Lis
     }
 
     override fun getItemCount(): Int {
-        var count = 0
-        for (i in productArrayList.indices){
-            for (j in productArrayList[i].products.indices){
-                count++
-            }
-        }
-        return count
+//        var count = 0
+//        for (i in productArrayList.indices){
+//            for (j in productArrayList[i].products.indices){
+//                count++
+//            }
+//        }
+        return productArrayList.count()
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
