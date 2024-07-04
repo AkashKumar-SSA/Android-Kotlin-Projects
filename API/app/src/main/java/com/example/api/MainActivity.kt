@@ -40,9 +40,7 @@ class MainActivity : AppCompatActivity() {
                 val responseBody = response.body()!!
                 val productList = responseBody.carts
                 val collectDataInStringBuilder = StringBuilder()
-                for (i in responseBody.carts.indices){
-                    myAdapter = MyAdapter(this@MainActivity, responseBody.carts[i].products)
-                }
+                myAdapter = MyAdapter(this@MainActivity, responseBody.carts)
                 recyclerView.adapter = myAdapter
                 recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
 //                var count = 0

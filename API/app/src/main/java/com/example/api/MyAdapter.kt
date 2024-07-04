@@ -1,6 +1,7 @@
 package com.example.api
 
 import android.app.Activity
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
@@ -9,19 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 
-class MyAdapter(val context: Activity, val productArrayList: List<Product>):
+class MyAdapter(private val context: Activity, private val productArrayList: List<Cart>):
     RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     class MyViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
-        val productImage: ShapeableImageView
-        val productName: TextView
-        val productPrice: TextView
-
-        init {
-            productImage = itemView.findViewById(R.id.productImage)
-            productName = itemView.findViewById(R.id.productName)
-            productPrice = itemView.findViewById(R.id.productPrice)
-        }
+        val productImage: ShapeableImageView = itemView.findViewById(R.id.productImage)
+        val productName: TextView = itemView.findViewById(R.id.productName)
+        val productPrice: TextView = itemView.findViewById(R.id.productPrice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -30,12 +25,18 @@ class MyAdapter(val context: Activity, val productArrayList: List<Product>):
     }
 
     override fun getItemCount(): Int {
-        return productArrayList.count()
+        var count = 0
+        for (i in productArrayList.indices){
+            for (j in productArrayList[i].products.indices){
+                count++
+            }
+        }
+        return count
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = productArrayList[position]
-        Picasso.get().load(currentItem.thumbnail).into(holder.productImage);
+        val currentItem = productArrayList[position].products[0]
+        Picasso.get().load(currentItem.thumbnail).into(holder.productImage)
         holder.productName.text = currentItem.title
         holder.productPrice.text = currentItem.price.toString()
 
