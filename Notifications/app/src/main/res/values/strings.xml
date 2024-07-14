@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Notifications</string>
+    <string name="secondText">It is Second Activity</string>
+</resources>

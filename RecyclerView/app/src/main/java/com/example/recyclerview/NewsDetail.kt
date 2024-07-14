@@ -35,7 +35,7 @@ class NewsDetail : AppCompatActivity() {
         newsHeading.text = newsHead
         newsContent.text = newsContents
         newsImage.setOnClickListener {
-            Toast.makeText(applicationContext,"Image Clicked",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"Clicked on ${newsHeading.text}'s image",Toast.LENGTH_SHORT).show()
         }
     }
 }
