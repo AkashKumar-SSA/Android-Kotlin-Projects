@@ -18,10 +18,10 @@ class ShowDetail : AppCompatActivity() {
             insets
         }
         val detail  = intent.getStringExtra("key")
-//        var showName: TextView = findViewById(R.id.showName)
-//        showName.setText(detail)
-        var showName: TextView = findViewById<TextView?>(R.id.showName).apply {
-            text = detail
-        }
+//        var showName: TextView = findViewById<TextView?>(R.id.showName).apply {
+//            text = detail
+//        }
+        var showName: TextView = findViewById<TextView?>(R.id.showName)
+        showName.text = detail
     }
 }

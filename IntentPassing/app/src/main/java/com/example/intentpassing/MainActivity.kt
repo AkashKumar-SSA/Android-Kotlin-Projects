@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         showDetail.setOnClickListener {
-            Toast.makeText(this,"${name.text }"+"\n" + "${email.text}" + "${phone.text}" , Toast.LENGTH_LONG).show()
-            intent = Intent(this,ShowDetail::class.java)
+//            Toast.makeText(this,"${name.text }"+"\n" + "${email.text}" + "${phone.text}" , Toast.LENGTH_LONG).show()
+            val intent = Intent(this,ShowDetail::class.java)
             intent.putExtra("key",name.text.toString())
             startActivity(intent)
 //            intent = Intent(this,ShowDetail::class.java).also {
