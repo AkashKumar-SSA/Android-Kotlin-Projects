@@ -76,9 +76,7 @@ class MainActivity : AppCompatActivity() {
 //                dialog.dismiss()
                 Toast.makeText(this,"You have selected cancel",Toast.LENGTH_SHORT).show()
             })
-//            builder2.setItems(options) { dialog, which ->
-//                // Handle item selection
-//            }
+
             builder3.show()
 
         }

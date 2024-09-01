@@ -45,8 +45,5 @@ RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
                 listener.onItemClick(adapterPosition)
             }
         }
-
-
     }
-
 }
